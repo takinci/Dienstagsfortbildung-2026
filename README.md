@@ -8,7 +8,7 @@ This is a small, static single-page app to manage the weekly Tuesday training se
 - Shows the next upcoming lecture (date + speaker) and hides past sessions.
 - Lists all remaining 2026 sessions in a table.
 - Provides search by date and/or speaker (substring match supported).
-- Updates the local clock live so “future” is always relative to now.
+- Updates the local clock live so "future" is always relative to now.
 - Offers simple email opt-in/out: address is stored locally; optional backend calls are prepared.
 
 ### Technical overview
@@ -24,12 +24,12 @@ This is a small, static single-page app to manage the weekly Tuesday training se
 
 ### How to use
 1) Open `index.html` (double-click or serve via any static host).
-2) “Next lecture” and the table automatically show only dates from today onward.
-3) Use search: pick a date and/or type a speaker substring, then click “Search” (Enter works too).
-4) Email opt-in/out: enter an address, click “Subscribe” or “Unsubscribe.” The address is saved in `localStorage`.
+2) "Next lecture" and the table automatically show only dates from today onward.
+3) Use search: pick a date and/or type a speaker substring, then click "Search" (Enter works too).
+4) Email opt-in/out: enter an address, click "Subscribe" or "Unsubscribe." The address is saved in `localStorage`.
 
 ### Dev Container (optional)
-- Open in VS Code → “Reopen in Container”.
+- Open in VS Code → "Reopen in Container".
 - After build, backend deps are installed (via `postCreateCommand`).
 - Run backend + frontend together: `npm run dev` from `src/backend`, then visit http://localhost:3000.
 
