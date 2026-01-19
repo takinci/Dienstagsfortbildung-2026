@@ -1,0 +1,14 @@
+{
+  "name": "Dienstagsfortbildung-2026",
+  "image": "mcr.microsoft.com/devcontainers/javascript-node:20",
+  "remoteUser": "node",
+  "postCreateCommand": "cd src/backend && npm install",
+  "forwardPorts": [3000],
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dbaeumer.vscode-eslint"
+      ]
+    }
+  }
+}

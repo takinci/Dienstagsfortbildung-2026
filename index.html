@@ -313,11 +313,7 @@
       </div>
 
       <div class="meta" id="subMeta">
-        Hinweis: Diese HTML-Datei kann ohne Server keine echten E-Mails versenden. Sie speichert die E-Mail-Adresse lokal im Browser und versucht optional, einen Backend-Endpunkt aufzurufen.
-      </div>
-
-      <div class="hint">
-        Produktivbetrieb: Implementieren Sie Endpunkte <code>/api/subscribe</code>, <code>/api/unsubscribe</code> und <code>/api/notify</code>, um Benachrichtigungen serverseitig zu senden.
+        Hinweis: Ihre E-Mail-Adresse wird lokal im Browser gespeichert und an den Backend-Server übermittelt.
       </div>
     </section>
 
@@ -476,13 +472,13 @@
       }
 
       setSubscribedEmail(email);
-      meta.textContent = "Anmeldung lokal gespeichert. Optional: Backend wird kontaktiert …";
+      meta.textContent = "Anmeldung wird verarbeitet …";
 
       try {
         await postJSON("/api/subscribe", { email, seriesTitle: "Dienstagsfortbildung 2026" });
         meta.textContent = "Anmeldung gespeichert. Backend wurde benachrichtigt.";
       } catch {
-        meta.textContent = "Anmeldung lokal gespeichert. Kein Backend erreichbar (optional).";
+        meta.textContent = "Fehler beim Backend-Kontakt, aber lokal gespeichert.";
       }
     }
 
@@ -496,13 +492,13 @@
       }
 
       setSubscribedEmail("");
-      meta.textContent = "Abmeldung lokal gespeichert. Optional: Backend wird kontaktiert …";
+      meta.textContent = "Abmeldung wird verarbeitet …";
 
       try {
-        await postJSON("/api/unsubscribe", { email, seriesTitle: "Dienstagsfortbildung 2026" });
+        await postJSON("/api/unsubscribe", { email });
         meta.textContent = "Abmeldung gespeichert. Backend wurde benachrichtigt.";
       } catch {
-        meta.textContent = "Abmeldung lokal gespeichert. Kein Backend erreichbar (optional).";
+        meta.textContent = "Fehler beim Backend-Kontakt, aber lokal gelöscht.";
       }
     }
 
